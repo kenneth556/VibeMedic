@@ -14,6 +14,7 @@ AUDIT  ➔  UNDERSTAND  ➔  DIAGNOSE  ➔  REPAIR  ➔  COMPLETE  ➔  SECURE  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Maintained by: Amararu Kenneth / Blakkaverse](https://img.shields.io/badge/Maintained%20by-Amararu%20Kenneth%20%2F%20Blakkaverse-purple.svg)](https://github.com/kenneth556)
+[![Support VibeMedic](https://img.shields.io/badge/Support-VibeMedic%20❤️-ff5a5f.svg)](https://flutterwave.com/donate/b6p187tamegm)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Pure%20Markdown%20%26%20SQL-success.svg)](#)
 
@@ -290,6 +291,20 @@ Here is an illustrative example of how a developer might use VibeMedic on an AI-
 
 6. Developer runs project build and ships with confidence.
 ```
+
+---
+
+## 💖 Support VibeMedic
+
+If **VibeMedic** saved you hours of debugging, caught a critical security vulnerability, or helped you ship your AI-built product with confidence, consider supporting the continued development and open-source maintenance of this project:
+
+<div align="center">
+
+[![Support VibeMedic via Flutterwave](https://img.shields.io/badge/Support%20VibeMedic-Donate%20via%20Flutterwave%20💳-0070BA?style=for-the-badge&logoColor=white)](https://flutterwave.com/donate/b6p187tamegm)
+
+👉 **[Click here to Support VibeMedic via Flutterwave](https://flutterwave.com/donate/b6p187tamegm)**
+
+</div>
 
 ---
 
