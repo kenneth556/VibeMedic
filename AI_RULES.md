@@ -1,4 +1,4 @@
-# AI Operating Rules & Guidelines for vibe-code-rescue
+# AI Operating Rules & Guidelines for VibeMedic
 
 This file defines the mandatory operating guidelines for any AI coding agent modifying, extending, or maintaining this repository.
 

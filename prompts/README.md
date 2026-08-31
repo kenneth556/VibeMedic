@@ -1,10 +1,10 @@
-# Vibe Code Rescue: Prompt Catalog & Execution Index
+# 🩺 VibeMedic: Prompt Catalog & Execution Index
 
-This directory contains the modular, highly specialized prompt suites designed to turn AI coding agents (Cursor, Windsurf, Claude Code, Antigravity, ChatGPT, Copilot, etc.) into rigorous technical auditors and repair engineers.
+This directory contains the modular, highly specialized prompt suites designed to turn AI coding agents (Cursor, Windsurf, Claude Code, Antigravity, ChatGPT, Copilot, etc.) into rigorous technical doctors, auditors, and repair engineers.
 
 ---
 
-## Master Orchestrator
+## Master Doctor Orchestrator
 
 | Prompt | Target | Output |
 |--------|--------|--------|

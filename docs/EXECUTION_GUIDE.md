@@ -1,6 +1,6 @@
-# Vibe Code Rescue: Execution Guide
+# VibeMedic: Execution Guide
 
-This guide details how to execute the prompts with AI coding agents (Cursor, Windsurf, Claude Code, Antigravity, ChatGPT, Copilot, etc.) to achieve maximum reliability and zero regressions.
+This guide details how to execute VibeMedic prompts with AI coding agents (Cursor, Windsurf, Claude Code, Antigravity, ChatGPT, Copilot, etc.) to achieve maximum reliability and zero regressions.
 
 ---
 

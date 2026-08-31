@@ -1,4 +1,4 @@
-# Vibe Code Rescue: Preset Workflows & Recipes
+# VibeMedic: Preset Workflows & Recipes
 
 Use these recipes for specific engineering scenarios.
 

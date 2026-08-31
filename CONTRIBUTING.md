@@ -1,4 +1,4 @@
-# Contributing to Vibe Code Rescue
+# Contributing to VibeMedic 🩺
 
 We welcome contributions to improve prompt reliability, expand test cases, and enhance audit coverage for AI-generated codebases.
 
