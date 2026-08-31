@@ -1,5 +1,7 @@
 # Contributing to VibeMedic 🩺
 
+**VibeMedic** is maintained by **Amararu Kenneth** ([@kenneth556](https://github.com/kenneth556)) under **Blakkaverse**.
+
 We welcome contributions to improve prompt reliability, expand test cases, and enhance audit coverage for AI-generated codebases.
 
 ---

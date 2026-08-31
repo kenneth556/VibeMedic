@@ -2,34 +2,53 @@
 
 # 🩺 VibeMedic
 
-### *Your AI-generated app is probably held together by vibes.*
+### **Built your app with AI? Before you ship it, run VibeMedic.**
 
-**VibeMedic** is an open-source AI repair toolkit that helps developers **audit**, **complete**, **secure**, and **productionize** vibe-coded applications.
+*Your AI-generated app is probably held together by vibes.*
+
+**VibeMedic** is an open-source AI repair toolkit designed specifically for **AI-assisted builders** to audit, complete, secure, and productionize vibe-coded applications.
 
 ```text
 AUDIT  ➔  DIAGNOSE  ➔  REPAIR  ➔  VERIFY  ➔  SHIP
 ```
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Created by](https://img.shields.io/badge/Maintained%20by-Amararu%20Kenneth%20%2F%20Blakkaverse-purple.svg)](https://github.com/kenneth556)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)](#)
-[![AI Compatible](https://img.shields.io/badge/AI%20Agents-Cursor%20%7C%20Claude%20%7C%20Windsurf%20%7C%20Antigravity-orange.svg)](#)
 
 </div>
 
 ---
 
-## 🎯 What It Catches
+## 🎯 Built For AI-Assisted Builders
 
-AI coding assistants are great at building prototypes in minutes, but they leave behind silent landmines. **VibeMedic diagnoses and cures:**
+If you built your app using:
+
+<div align="center">
+
+| 🚀 AI Code Editors & CLIs | ⚡ AI App Generators & Sandboxes | 🧠 Frontier Models & Agents |
+| :--- | :--- | :--- |
+| **Cursor** (`Composer` / Agent) | **Lovable** | **Claude 3.7 / Claude Code** |
+| **Windsurf** (`Cascade`) | **Bolt.new** | **OpenAI Codex / ChatGPT** |
+| **Google Antigravity** | **v0 by Vercel** | **Google Gemini** |
+| **GitHub Copilot** | **Replit Agent** | **Custom AI Agents** |
+
+</div>
+
+AI gets you 85% of the way there in minutes. But that remaining 15% is filled with silent failures, mock data, dead buttons, and security holes. **VibeMedic bridges the gap from prototype to bulletproof production.**
+
+---
+
+## 🩺 What It Catches & Cures
 
 - 🐛 **Broken functionality** — Type errors, runtime crashes, and missing imports
-- 🧪 **Dummy / mock data** — Hardcoded arrays, fake stats, and simulated `setTimeout` calls
-- 🖱️ **Dead buttons & toggles** — Missing `onClick` handlers and forms that don't persist
-- 🗄️ **Supabase / database mismatches** — Schema discrepancies, missing migrations, and query bugs
-- 🔐 **Authentication & RLS problems** — Overly permissive policies, role bypasses, and IDOR vulnerabilities
-- 🔌 **Broken API contracts** — Mismatched payloads and nonexistent endpoints
-- 📱 **Responsive issues** — Broken mobile layouts, viewport overflow, and touch-target friction
+- 🧪 **Dummy / mock data** — Hardcoded arrays, fake stats, and simulated `setTimeout` delays
+- 🖱️ **Dead buttons & toggles** — Missing `onClick` handlers and forms that fail to save
+- 🗄️ **Supabase / database mismatches** — Missing schemas, foreign key bugs, and query desyncs
+- 🔐 **Authentication & RLS leaks** — Overly permissive policies, role bypasses, and IDOR vulnerabilities
+- 🔌 **Broken API contracts** — Mismatched request/response shapes and dead endpoints
+- 📱 **Responsive issues** — Mobile overflow, layout clipping, and tiny touch targets
 - ✨ **UI / UX problems** — Inconsistent design systems, random typography, and awkward spacing
 - 🎬 **Missing animations & micro-interactions** — Abrupt state transitions and lack of visual feedback
 - 📲 **PWA & offline issues** — Missing manifests, broken service workers, and blank offline screens
@@ -41,23 +60,23 @@ AI coding assistants are great at building prototypes in minutes, but they leave
 
 ### 1. Clone VibeMedic
 ```bash
-git clone https://github.com/YOUR_USERNAME/VibeMedic.git
+git clone https://github.com/kenneth556/VibeMedic.git
 ```
 
-### 2. Run in Your AI Assistant
-Open **Cursor Composer**, **Claude Code**, **Windsurf Cascade**, **Antigravity**, or **ChatGPT Projects**:
+### 2. Run with Your Favorite AI Tool
+Open your project in **Cursor**, **Windsurf**, **Claude Code**, **Antigravity**, or **ChatGPT**:
 
-| Scenario | What to Paste |
-|----------|---------------|
-| 🚀 **Full End-to-End Rescue** | Copy [`prompts/MASTER_REPAIR.md`](./prompts/MASTER_REPAIR.md) into your AI agent. |
-| 🗄️ **Supabase DB & RLS Sync** | Copy [`supabase/01-source-of-truth-generator.md`](./supabase/01-source-of-truth-generator.md). |
-| 🧪 **Eliminate Fake / Mock Data** | Copy [`prompts/stage-1-diagnose/02-dummy-data-audit.md`](./prompts/stage-1-diagnose/02-dummy-data-audit.md). |
-| 🖱️ **Fix Dead Buttons & Forms** | Copy [`prompts/stage-1-diagnose/03-ui-functionality-audit.md`](./prompts/stage-1-diagnose/03-ui-functionality-audit.md). |
-| 📲 **Convert App to PWA** | Copy [`prompts/stage-4-experience-and-polish/25-pwa-conversion.md`](./prompts/stage-4-experience-and-polish/25-pwa-conversion.md). |
+| Your Immediate Goal | Prompt to Copy & Paste |
+| :--- | :--- |
+| 🚀 **Full End-to-End Senior Engineer Rescue** | Copy [`prompts/MASTER_REPAIR.md`](./prompts/MASTER_REPAIR.md) into your AI agent. |
+| 🗄️ **Supabase Database & RLS Sync** | Copy [`supabase/01-source-of-truth-generator.md`](./supabase/01-source-of-truth-generator.md). |
+| 🧪 **Eliminate Fake / Mock / Dummy Data** | Copy [`prompts/stage-1-diagnose/02-dummy-data-audit.md`](./prompts/stage-1-diagnose/02-dummy-data-audit.md). |
+| 🖱️ **Fix Dead Buttons & Broken Forms** | Copy [`prompts/stage-1-diagnose/03-ui-functionality-audit.md`](./prompts/stage-1-diagnose/03-ui-functionality-audit.md). |
+| 📲 **Convert App to an Installable PWA** | Copy [`prompts/stage-4-experience-and-polish/25-pwa-conversion.md`](./prompts/stage-4-experience-and-polish/25-pwa-conversion.md). |
 
 ### 3. Verify & Ship
-Every VibeMedic prompt forces the agent to run the mandatory verification pipeline:
-$$\text{Typecheck} \longrightarrow \text{Lint} \longrightarrow \text{Test} \longrightarrow \text{Build} \longrightarrow \text{User Flow}$$
+Every VibeMedic prompt forces your AI agent through the mandatory verification pipeline:
+$$\text{Typecheck} \longrightarrow \text{Lint} \longrightarrow \text{Test} \longrightarrow \text{Build} \longrightarrow \text{Real Data Flow}$$
 
 ---
 
@@ -109,7 +128,7 @@ flowchart LR
 ## 🗂️ Complete Prompt Index
 
 ### 🏥 Master Doctor Orchestrator
-- [`MASTER_REPAIR.md`](./prompts/MASTER_REPAIR.md) — 9-Phase Senior Engineer repository rescue & regression testing.
+- [`MASTER_REPAIR.md`](./prompts/MASTER_REPAIR.md) — 9-Phase Senior Engineer autonomous repository rescue & regression testing.
 
 ### 🩺 Stage 1 — Diagnose
 - [`01-codebase-technical-audit.md`](./prompts/stage-1-diagnose/01-codebase-technical-audit.md) — Full technical health audit (types, imports, errors).
@@ -159,15 +178,12 @@ flowchart LR
 
 ---
 
-## 🛠️ Assistant Compatibility
+## 👥 Authors & Company
 
-VibeMedic prompts are optimized and tested for:
-- 🟢 **Cursor** (`Cmd+K`, `Composer`, Agent Mode)
-- 🟢 **Claude Code CLI** / **Claude 3.7 Sonnet**
-- 🟢 **Windsurf Cascade**
-- 🟢 **Google Antigravity IDE**
-- 🟢 **GitHub Copilot Workspace**
-- 🟢 **ChatGPT Canvas / Projects**
+**VibeMedic** is created and maintained by **[Amararu Kenneth](https://github.com/kenneth556)** under **Blakkaverse**.
+
+- GitHub: [@kenneth556](https://github.com/kenneth556)
+- Company: **Blakkaverse**
 
 ---
 
