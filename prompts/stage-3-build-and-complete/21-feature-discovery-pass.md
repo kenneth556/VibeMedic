@@ -1,4 +1,4 @@
-# Prompt 20: Hidden & Abandoned Feature Discovery Pass
+﻿# Prompt 21: Hidden & Abandoned Feature Discovery Pass
 
 > **Stage 3 — Build & Complete**  
 > **Target:** Unconnected schemas, orphaned types, disabled buttons, TODOs, abandoned endpoints  

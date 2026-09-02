@@ -1,4 +1,4 @@
-# Prompt 24: Motion, Animations & Micro-Interactions System
+﻿# Prompt 27: Motion, Animations & Micro-Interactions System
 
 > **Stage 4 — Experience & Polish**  
 > **Target:** Page transitions, modal choreography, hover/active states, feedback, reduced motion  

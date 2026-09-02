@@ -1,4 +1,4 @@
-# Prompt 27: End-to-End User Journey & UX Flow Audit
+﻿# Prompt 30: End-to-End User Journey & UX Flow Audit
 
 > **Stage 4 — Experience & Polish**  
 > **Target:** First-time users, returning users, empty/heavy data states, edge journeys, error recovery  

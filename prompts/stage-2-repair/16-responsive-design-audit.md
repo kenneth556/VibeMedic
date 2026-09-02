@@ -1,4 +1,4 @@
-# Prompt 15: Responsive & Multi-Device Design Audit
+﻿# Prompt 16: Responsive & Multi-Device Design Audit
 
 > **Stage 2 — Repair**  
 > **Target:** Breakpoints, overflows, mobile navigation, touch targets, horizontal scroll  

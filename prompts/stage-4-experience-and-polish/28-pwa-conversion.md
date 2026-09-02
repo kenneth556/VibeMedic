@@ -1,4 +1,4 @@
-# Prompt 25: Progressive Web App (PWA) Conversion
+﻿# Prompt 28: Progressive Web App (PWA) Conversion
 
 > **Stage 4 — Experience & Polish**  
 > **Target:** Manifest, service workers, asset caching, installability, offline UX  

@@ -51,7 +51,7 @@ When developers tell an AI agent:
 
 The model gets overwhelmed by context, hallucinates that *"everything looks great!"*, and makes superficial edits that introduce regressions.
 
-**VibeMedic** replaces vague instructions with a structured, multi-stage engineering playbook. Each prompt assigns your AI coding agent a single, forensic objective—forcing it to trace data end-to-end, inspect real database schemas, eliminate fake mocks, and run tests before declaring work complete.
+**VibeMedic** replaces vague instructions with a structured, 11-stage engineering playbook. Each prompt assigns your AI coding agent a single, forensic objective—forcing it to trace data end-to-end, inspect real database schemas, eliminate fake mocks, and run tests before declaring work complete.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -59,28 +59,51 @@ The model gets overwhelmed by context, hallucinates that *"everything looks grea
 │        (Autonomous 9-Phase Senior Engineer Rescue & Regression Check)       │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
-       ┌───────────────────────────────┼───────────────────────────────┐
-       ▼                               ▼                               ▼
-┌──────────────┐                ┌──────────────┐                ┌──────────────┐
-│   STAGE 1    │                │   STAGE 2    │                │   STAGE 3    │
-│   Diagnose   │───────────────▶│    Repair    │───────────────▶│Build/Complete│
-│  (01 - 10)   │                │  (11 - 15)   │                │  (16 - 21)   │
-└──────────────┘                └──────────────┘                └──────────────┘
-                                                                       │
-                               ┌───────────────────────────────────────┴───────┐
-                               ▼                                               ▼
-                        ┌──────────────┐                                ┌──────────────┐
-                        │   STAGE 4    │                                │   STAGE 5    │
-                        │ Polish & PWA │                                │Standards/Docs│
-                        │  (22 - 28)   │                                │  (29 - 30)   │
-                        └──────────────┘                                └──────────────┘
-                               │
-                               ▼
-                        ┌──────────────┐
-                        │   SUPABASE   │
-                        │ Database RLS │
-                        │  (01 - 04)   │
-                        └──────────────┘
+        ┌──────────────────────────────┼──────────────────────────────┐
+        ▼                              ▼                              ▼
+ ┌──────────────┐               ┌──────────────┐               ┌──────────────┐
+ │   STAGE 1    │               │   STAGE 2    │               │   STAGE 3    │
+ │   Diagnose   │──────────────▶│    Repair    │──────────────▶│Build/Complete│
+ │  (01 - 10)   │               │  (11 - 16)   │               │  (17 - 24)   │
+ └──────────────┘               └──────────────┘               └──────────────┘
+                                                                      │
+        ┌──────────────────────────────┬──────────────────────────────┘
+        ▼                              ▼
+ ┌──────────────┐               ┌──────────────┐
+ │   STAGE 4    │               │   STAGE 5    │
+ │ Polish & PWA │──────────────▶│Standards/Docs│
+ │  (25 - 31)   │               │  (32 - 33)   │
+ └──────────────┘               └──────────────┘
+        │
+        ├──────────────────────────────┬──────────────────────────────┐
+        ▼                              ▼                              ▼
+ ┌──────────────┐               ┌──────────────┐               ┌──────────────┐
+ │   STAGE 6    │               │   STAGE 7    │               │   STAGE 8    │
+ │  APIs & Keys │──────────────▶│   Payments   │──────────────▶│   Database   │
+ │  (34 - 38)   │               │     (39)     │               │     (40)     │
+ └──────────────┘               └──────────────┘               └──────────────┘
+                                                                      │
+        ┌──────────────────────────────┬──────────────────────────────┘
+        ▼                              ▼
+ ┌──────────────┐               ┌──────────────┐
+ │   STAGE 9    │               │   STAGE 10   │
+ │   Testing    │──────────────▶│ Architecture │
+ │  (41 - 43)   │               │     (44)     │
+ └──────────────┘               └──────────────┘
+                                       │
+                                       ▼
+                                ┌──────────────┐
+                                │   STAGE 11   │
+                                │  Production  │
+                                │  (45 - 46)   │
+                                └──────────────┘
+                                       │
+                                       ▼
+                                ┌──────────────┐
+                                │   SUPABASE   │
+                                │ Database RLS │
+                                │  (01 - 04)   │
+                                └──────────────┘
 ```
 
 ---
@@ -99,9 +122,12 @@ Every prompt in this repository targets a specific layer of the application stac
 | **Database & Schema** | Schema alignment, table constraints, foreign keys, missing columns, and query fixes. |
 | **Supabase SQL Suite** | Canonical `schema.sql`, `rls.sql`, `functions.sql`, `storage.sql`, and Edge Functions. |
 | **Security & IDOR** | Row Level Security, user data isolation, role guards, and client-side secret exposure. |
+| **Application Security** | Broad attack surface review: XSS, CSRF, injection, authz, file uploads, and session tokens. |
 | **API Contracts** | Request payloads, response structures, status codes, and frontend-backend mismatches. |
+| **API Integrations & Webhooks** | Third-party provider wiring, secrets hygiene, signature validation, and idempotency. |
+| **Payments & Billing** | End-to-end payment lifecycle, webhooks, duplicate processing, and refund/subscription states. |
 | **Error Resilience** | Loading, error, success, and empty states across all asynchronous operations. |
-| **Dependencies** | Unused package bloat, duplicate libraries, and peer-dependency conflict resolution. |
+| **Dependencies & Supply Chain** | Dead code removal, unused package bloat, supply-chain risks, and lockfile consistency. |
 | **Performance** | N+1 database queries, unnecessary React re-renders, bundle size, and memory leaks. |
 | **Accessibility (a11y)** | Keyboard navigation, focus traps, ARIA labels, contrast, and screen-reader support. |
 | **Responsive Design** | Viewport overflows, layout clipping, touch targets, and mobile breakpoints. |
@@ -109,6 +135,9 @@ Every prompt in this repository targets a specific layer of the application stac
 | **Visual Assets & Motion** | Lucide icon standardization, Lottie animations, and micro-interactions. |
 | **PWA & Offline Mode** | Web app manifest, service worker caching, installability, and offline shell. |
 | **Documentation & AI Rules**| Code-accurate documentation and permanent `AI_RULES.md` operating constraints. |
+| **Testing & Regression** | Critical user journey coverage, end-to-end workflow verification, and post-repair checks. |
+| **Architecture Consistency** | Pattern standardization across fetching, state, logging, and error handling. |
+| **Production Readiness** | Launch readiness scorecard, operational failure audits, and final ship verdict. |
 
 ---
 
@@ -183,42 +212,103 @@ VibeMedic prompts are agent-agnostic and work with any LLM coding tool capable o
 | :--- | :--- | :--- |
 | [`11-error-resilience-audit.md`](./prompts/stage-2-repair/11-error-resilience-audit.md) | Error Resilience Audit | Implements robust Loading ➔ Success ➔ Error ➔ Empty states across async flows. |
 | [`12-security-audit.md`](./prompts/stage-2-repair/12-security-audit.md) | Security & IDOR Audit | Detects access-control bypasses, XSS, SQLi, CSRF, and leaked client secrets. |
-| [`13-performance-audit.md`](./prompts/stage-2-repair/13-performance-audit.md) | Performance & Query Audit | Resolves N+1 database queries, bundle bloat, React re-renders, and memory leaks. |
-| [`14-accessibility-audit.md`](./prompts/stage-2-repair/14-accessibility-audit.md) | Accessibility (a11y) Audit | Enforces keyboard navigation, focus management, ARIA tags, and contrast standards. |
-| [`15-responsive-design-audit.md`](./prompts/stage-2-repair/15-responsive-design-audit.md) | Responsive Design Audit | Fixes layout breaks, horizontal scrolling, and touch ergonomics across viewports. |
+| [`13-application-security-audit.md`](./prompts/stage-2-repair/13-application-security-audit.md) | Application Security Audit | Broad application attack surface audit covering injections, authz, file uploads, and session security. |
+| [`14-performance-audit.md`](./prompts/stage-2-repair/14-performance-audit.md) | Performance & Query Audit | Resolves N+1 database queries, bundle bloat, React re-renders, and memory leaks. |
+| [`15-accessibility-audit.md`](./prompts/stage-2-repair/15-accessibility-audit.md) | Accessibility (a11y) Audit | Enforces keyboard navigation, focus management, ARIA tags, and contrast standards. |
+| [`16-responsive-design-audit.md`](./prompts/stage-2-repair/16-responsive-design-audit.md) | Responsive Design Audit | Fixes layout breaks, horizontal scrolling, and touch ergonomics across viewports. |
 
 ---
 
 ### 🏗️ Stage 3 — Build & Complete (Feature Execution Engine)
 | File | Name | Purpose |
 | :--- | :--- | :--- |
-| [`16-master-feature-inventory.md`](./prompts/stage-3-build-and-complete/16-master-feature-inventory.md) | Master Feature Inventory | Discovers all intended features and categorizes status (Complete, Partial, Not Started). |
-| [`17-deep-feature-verification.md`](./prompts/stage-3-build-and-complete/17-deep-feature-verification.md) | Deep Feature Verification | 17-point lifecycle trace per feature to detect hidden dummy or broken logic. |
-| [`18-feature-implementation-engine.md`](./prompts/stage-3-build-and-complete/18-feature-implementation-engine.md) | Feature Implementation Engine | Systematically implements missing features end-to-end by priority order. |
-| [`19-partial-feature-completion.md`](./prompts/stage-3-build-and-complete/19-partial-feature-completion.md) | Partial Feature Completion Pass | 5-tier completion pass for half-implemented features. |
-| [`20-feature-discovery-pass.md`](./prompts/stage-3-build-and-complete/20-feature-discovery-pass.md) | Hidden Feature Discovery Pass | Unearths and connects orphaned schema tables, TODOs, and disabled buttons. |
-| [`21-zero-defect-feature-pass.md`](./prompts/stage-3-build-and-complete/21-zero-defect-feature-pass.md) | Zero-Defect Feature Pass | Final sweep ensuring zero legitimately unfinished features remain. |
+| [`17-master-feature-inventory.md`](./prompts/stage-3-build-and-complete/17-master-feature-inventory.md) | Master Feature Inventory | Discovers all intended features and categorizes status (Complete, Partial, Not Started). |
+| [`18-deep-feature-verification.md`](./prompts/stage-3-build-and-complete/18-deep-feature-verification.md) | Deep Feature Verification | 17-point lifecycle trace per feature to detect hidden dummy or broken logic. |
+| [`19-feature-implementation-engine.md`](./prompts/stage-3-build-and-complete/19-feature-implementation-engine.md) | Feature Implementation Engine | Systematically implements missing features end-to-end by priority order. |
+| [`20-partial-feature-completion.md`](./prompts/stage-3-build-and-complete/20-partial-feature-completion.md) | Partial Feature Completion Pass | 5-tier completion pass for half-implemented features. |
+| [`21-feature-discovery-pass.md`](./prompts/stage-3-build-and-complete/21-feature-discovery-pass.md) | Hidden Feature Discovery Pass | Unearths and connects orphaned schema tables, TODOs, and disabled buttons. |
+| [`22-zero-defect-feature-pass.md`](./prompts/stage-3-build-and-complete/22-zero-defect-feature-pass.md) | Zero-Defect Feature Pass | Final sweep ensuring zero legitimately unfinished features remain. |
+| [`23-dead-code-dependency-audit.md`](./prompts/stage-3-build-and-complete/23-dead-code-dependency-audit.md) | Dead Code & Dependency Audit | Removes unused components, routes, API clients, and obsolete feature flags. |
+| [`24-dependency-supply-chain-audit.md`](./prompts/stage-3-build-and-complete/24-dependency-supply-chain-audit.md) | Dependency & Supply Chain Audit | Detects vulnerable, abandoned, or suspicious packages and reconciles lockfiles. |
 
 ---
 
 ### 🎨 Stage 4 — Experience & Polish (Design, Mobile & PWA)
 | File | Name | Purpose |
 | :--- | :--- | :--- |
-| [`22-ui-ux-design-audit.md`](./prompts/stage-4-experience-and-polish/22-ui-ux-design-audit.md) | UI/UX Design System Audit | Standardizes typography, spacing scales, card design, and component primitives. |
-| [`23-icons-and-visual-assets.md`](./prompts/stage-4-experience-and-polish/23-icons-and-visual-assets.md) | Icons & Visual Assets Strategy | Implements consistent Lucide icon imports, asset tree structure, and Lottie animations. |
-| [`24-animation-and-microinteractions.md`](./prompts/stage-4-experience-and-polish/24-animation-and-microinteractions.md) | Motion & Micro-Interactions | Adds purposeful UI transitions with strict `prefers-reduced-motion` compliance. |
-| [`25-pwa-conversion.md`](./prompts/stage-4-experience-and-polish/25-pwa-conversion.md) | Progressive Web App Conversion | Implements Web App Manifest, Service Worker caching, and an offline shell. |
-| [`26-mobile-experience-pass.md`](./prompts/stage-4-experience-and-polish/26-mobile-experience-pass.md) | Mobile-First Experience Pass | Optimizes one-handed touch ergonomics, mobile menus, drawers, and keyboards. |
-| [`27-user-journey-audit.md`](./prompts/stage-4-experience-and-polish/27-user-journey-audit.md) | User Journey & UX Flow Audit | Simulates first-time visit, onboarding, edge journeys, and error recovery. |
-| [`28-final-production-polish.md`](./prompts/stage-4-experience-and-polish/28-final-production-polish.md) | Final Production Polish Pass | Micro-spacing, typography alignment, and eliminating "AI-generated" roughness. |
+| [`25-ui-ux-design-audit.md`](./prompts/stage-4-experience-and-polish/25-ui-ux-design-audit.md) | UI/UX Design System Audit | Standardizes typography, spacing scales, card design, and component primitives. |
+| [`26-icons-and-visual-assets.md`](./prompts/stage-4-experience-and-polish/26-icons-and-visual-assets.md) | Icons & Visual Assets Strategy | Implements consistent Lucide icon imports, asset tree structure, and Lottie animations. |
+| [`27-animation-and-microinteractions.md`](./prompts/stage-4-experience-and-polish/27-animation-and-microinteractions.md) | Motion & Micro-Interactions | Adds purposeful UI transitions with strict `prefers-reduced-motion` compliance. |
+| [`28-pwa-conversion.md`](./prompts/stage-4-experience-and-polish/28-pwa-conversion.md) | Progressive Web App Conversion | Implements Web App Manifest, Service Worker caching, and an offline shell. |
+| [`29-mobile-experience-pass.md`](./prompts/stage-4-experience-and-polish/29-mobile-experience-pass.md) | Mobile-First Experience Pass | Optimizes one-handed touch ergonomics, mobile menus, drawers, and keyboards. |
+| [`30-user-journey-audit.md`](./prompts/stage-4-experience-and-polish/30-user-journey-audit.md) | User Journey & UX Flow Audit | Simulates first-time visit, onboarding, edge journeys, and error recovery. |
+| [`31-final-production-polish.md`](./prompts/stage-4-experience-and-polish/31-final-production-polish.md) | Final Production Polish Pass | Micro-spacing, typography alignment, and eliminating "AI-generated" roughness. |
 
 ---
 
 ### 📚 Stage 5 — Standards & Documentation
 | File | Name | Purpose |
 | :--- | :--- | :--- |
-| [`29-project-documentation-generator.md`](./prompts/stage-5-standards-and-docs/29-project-documentation-generator.md) | Project Docs Generator | Generates code-derived `README`, `ARCHITECTURE`, `DEVELOPMENT`, and `.env.example`. |
-| [`30-ai-rules-generator.md`](./prompts/stage-5-standards-and-docs/30-ai-rules-generator.md) | AI Rules Generator | Creates a tailored `AI_RULES.md` file to govern future AI coding agents. |
+| [`32-project-documentation-generator.md`](./prompts/stage-5-standards-and-docs/32-project-documentation-generator.md) | Project Docs Generator | Generates code-derived `README`, `ARCHITECTURE`, `DEVELOPMENT`, and `.env.example`. |
+| [`33-ai-rules-generator.md`](./prompts/stage-5-standards-and-docs/33-ai-rules-generator.md) | AI Rules Generator | Creates a tailored `AI_RULES.md` file to govern future AI coding agents. |
+
+---
+
+### 🔌 Stage 6 — API Integrations (Connectivity, Security, Reliability & Webhooks)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`34-api-integration-audit.md`](./prompts/stage-6-api-integrations/34-api-integration-audit.md) | API Integration Audit & Repair | Finds fake, mocked, half-wired, UI-only, or misconfigured third-party integrations and wires them end-to-end. |
+| [`35-api-security-audit.md`](./prompts/stage-6-api-integrations/35-api-security-audit.md) | API Security Audit & Repair | Hardens secrets hygiene, signature checks, ownership verification, scopes, and rotation. |
+| [`36-api-reliability-error-handling.md`](./prompts/stage-6-api-integrations/36-api-reliability-error-handling.md) | API Reliability & Error Handling | Adds timeouts, retries, fallbacks, rate-limit handling, and full Loading/Success/Error/Empty UX states. |
+| [`37-webhook-audit.md`](./prompts/stage-6-api-integrations/37-webhook-audit.md) | Webhook Audit & Repair | Verifies signatures, idempotency, retries, replay, dead-letter handling, and DB updates for every webhook. |
+| [`38-environment-secrets-audit.md`](./prompts/stage-6-api-integrations/38-environment-secrets-audit.md) | Environment Variables & Secrets Audit | Reconciles `.env` / `.env.example` / code, removes leaks, fixes naming, and tightens scope. |
+
+---
+
+### 💳 Stage 7 — Payments (Financial Flows, Verification & Idempotency)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`39-payment-flow-audit.md`](./prompts/stage-7-payments/39-payment-flow-audit.md) | Payment Flow Audit & Repair | Traces init → provider → webhook → verify → DB → grant; fixes duplicates, replay, refund, and subscription state bugs. |
+
+---
+
+### 🗄️ Stage 8 — Database (Schema Integrity, Constraints, Performance & Concurrency)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`40-database-integrity-audit.md`](./prompts/stage-8-database/40-database-integrity-audit.md) | Database Integrity Audit | Detects orphans, missing FKs, nullable sensitive columns, duplicate data, missing unique constraints/indexes, race conditions, and cascade mistakes. |
+
+---
+
+### 🧪 Stage 9 — Testing (Coverage, End-to-End Verification & Regression)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`41-test-coverage-critical-path-audit.md`](./prompts/stage-9-testing/41-test-coverage-critical-path-audit.md) | Test Coverage & Critical Path Audit | Identifies critical user journeys and verifies they are actually tested; authors the missing tests. |
+| [`42-end-to-end-user-flow-verification.md`](./prompts/stage-9-testing/42-end-to-end-user-flow-verification.md) | End-to-End User Flow Verification | Walks major workflows as a real user; injects failure modes; verifies persistence, permissions, cross-device behavior, and notifications. |
+| [`43-regression-testing-after-repairs.md`](./prompts/stage-9-testing/43-regression-testing-after-repairs.md) | Regression Testing After Repairs | Verifies that VibeMedic repairs did not break existing functionality across tests, data, providers, UX, security, and docs. |
+
+---
+
+### 🏛️ Stage 10 — Architecture (Pattern Standardization & Consolidation)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`44-architecture-consistency-audit.md`](./prompts/stage-10-architecture/44-architecture-consistency-audit.md) | Architecture Consistency Audit | Finds competing patterns across data fetching, components, auth, validation, state, error handling, styling, logging; consolidates into a single canonical pattern. |
+
+---
+
+### 🚀 Stage 11 — Production (Launch Readiness & Final Doctor's Checkup)
+| File | Name | Purpose |
+| :--- | :--- | :--- |
+| [`45-production-readiness-audit.md`](./prompts/stage-11-production/45-production-readiness-audit.md) | Production Readiness Audit | Final pre-launch review across environment, logging, monitoring, security, database, payments, backups, performance, PWA, accessibility, mobile, SEO, deployment, rate limiting. |
+| [`46-final-doctors-checkup.md`](./prompts/stage-11-production/46-final-doctors-checkup.md) | VibeMedic Final Doctor's Checkup 🩺 | Non-destructive whole-application verification across every layer; produces a definitive Ship / Don't Ship verdict and Ship Manifest. |
+
+---
+
+## 🔌 Third-Party APIs & Services Guide
+
+VibeMedic includes a dedicated catalog of recommended, battle-tested APIs and services:
+
+- **Directory Guide:** [`apis/README.md`](./apis/README.md)
+- **Master API Catalog:** [`apis/RECOMMENDED_APIS.md`](./apis/RECOMMENDED_APIS.md) — Covers payments (Africa & Global), auth, storage, SMS, email, AI, analytics, webhooks, and 30+ service categories with code examples and anti-patterns.
 
 ---
 
@@ -236,93 +326,71 @@ supabase/
 └── README.md            # Execution guide and database architecture documentation
 ```
 
-### Key Architectural Distinctions:
-1. **Source-of-Truth vs. Migrations:** `schema.sql`, `rls.sql`, `functions.sql`, and `storage.sql` reflect the **current intended state** of the application, while migration files record historical database evolution.
-2. **PostgreSQL Functions vs. Edge Functions:** PostgreSQL trigger functions and RPC routines belong in `functions.sql`. Supabase Edge Functions are standalone TypeScript applications and are documented separately in `edge-functions.md`.
-3. **Execution Dependency Order:** When setting up a database from scratch, execute in sequence:
-   $$\text{schema.sql} \longrightarrow \text{functions.sql} \longrightarrow \text{rls.sql} \longrightarrow \text{storage.sql}$$
+### Supabase Workflow Prompts
+| # | Prompt File | Purpose |
+|---|-------------|---------|
+| 01 | [`01-source-of-truth-generator.md`](./supabase/01-source-of-truth-generator.md) | Complete codebase audit to generate clean, idempotent SQL source-of-truth files. |
+| 02 | [`02-sql-verification.md`](./supabase/02-sql-verification.md) | Static & runtime verification of the 4 SQL files against code, multi-user isolation, and syntax. |
+| 03 | [`03-clean-db-setup-test.md`](./supabase/03-clean-db-setup-test.md) | Verifies dependency order (`schema` → `functions` → `rls` → `storage`) in a blank database. |
+| 04 | [`04-complete-resynchronization.md`](./supabase/04-complete-resynchronization.md) | Post-build re-synchronization across code, database schema, policies, storage, and edge functions. |
 
-### Supabase Workflow Prompts:
-- [`supabase/01-source-of-truth-generator.md`](./supabase/01-source-of-truth-generator.md) — Inspects codebase and generates the 4 canonical SQL files.
-- [`supabase/02-sql-verification.md`](./supabase/02-sql-verification.md) — Independent SQL syntax, relationship, and multi-user isolation check.
-- [`supabase/03-clean-db-setup-test.md`](./supabase/03-clean-db-setup-test.md) — Dependency-order verification for empty database setup.
-- [`supabase/04-complete-resynchronization.md`](./supabase/04-complete-resynchronization.md) — Re-synchronizes SQL files with application code after feature updates.
+Starter templates are provided in [`supabase/templates/`](./supabase/templates/).
 
 ---
 
-## ⚖️ Core Engineering Philosophy
+## 📋 Audit Reports Directory
 
-The VibeMedic methodology is built on foundational principles:
+When executing audit prompts, store your generated findings in [`audits/`](./audits/):
 
-- 🔍 **Don't Trust Appearances:** A UI component rendering without console errors does not mean the feature works.
-- 🚫 **Zero Fake Data Policy:** Never leave simulated delays, hardcoded stats, or mock arrays in production code.
-- 🛡️ **Never Weaken Security for Convenience:** Never solve authorization bugs by making tables public or using `USING (true)`.
-- 🔄 **Trace Data End-to-End:** An interaction is only functional when traced through:
-  $$\text{User Action} \longrightarrow \text{Component} \longrightarrow \text{Handler} \longrightarrow \text{API} \longrightarrow \text{Database} \longrightarrow \text{Response} \longrightarrow \text{State Update} \longrightarrow \text{Persistence}$$
-- 🧩 **Preserve Working Architecture:** Do not rewrite working subsystems or replace libraries merely for personal preference.
-- 🧪 **Verification Is Mandatory:** A task is never complete until type checks, linters, tests, and production builds pass.
-- 🧑‍✈️ **Keep Humans in Control:** The developer reviews and approves all AI agent modifications.
-
----
-
-## 📖 Real-World Scenario
-
-Here is an illustrative example of how a developer might use VibeMedic on an AI-generated SaaS application:
-
-```text
-1. Developer builds a React + Supabase dashboard using an AI coding assistant.
-   The app looks visually complete, but feels brittle.
-
-2. Developer copies "prompts/stage-1-diagnose/02-dummy-data-audit.md" into Cursor Composer.
-   ➔ AI Agent discovers that monthly revenue numbers are hardcoded mock arrays and 
-     replaces them with real Supabase RPC database queries.
-
-3. Developer runs "prompts/stage-1-diagnose/03-ui-functionality-audit.md".
-   ➔ AI Agent discovers that the "Delete Project" modal button has an empty onClick 
-     handler and wires it to the real backend mutation with confirmation dialogs.
-
-4. Developer runs "supabase/01-source-of-truth-generator.md".
-   ➔ AI Agent scans all database interactions, creates canonical "schema.sql" and 
-     "rls.sql", and catches a missing RLS policy on the team memberships table.
-
-5. Developer runs "prompts/stage-4-experience-and-polish/25-pwa-conversion.md".
-   ➔ AI Agent generates a valid web app manifest, installs a Service Worker shell, 
-     and handles offline error recovery.
-
-6. Developer runs project build and ships with confidence.
-```
+| Audit Focus | Template File | Recommended Output Path |
+| :--- | :--- | :--- |
+| **Architecture** | [`architecture.template.md`](./audits/architecture.template.md) | `audits/architecture.md` |
+| **Code Health** | [`code-health.template.md`](./audits/code-health.template.md) | `audits/code-health.md` |
+| **Feature Health** | [`features.template.md`](./audits/features.template.md) | `audits/features.md` |
+| **Database & Backend** | [`database.template.md`](./audits/database.template.md) | `audits/database.md` |
+| **Security & Auth** | [`security.template.md`](./audits/security.template.md) | `audits/security.md` |
+| **Performance** | [`performance.template.md`](./audits/performance.template.md) | `audits/performance.md` |
+| **Accessibility** | [`accessibility.template.md`](./audits/accessibility.template.md) | `audits/accessibility.md` |
+| **Responsive Design** | [`responsive.template.md`](./audits/responsive.template.md) | `audits/responsive.md` |
 
 ---
 
-## 💖 Support VibeMedic
+## 📖 In-Depth Documentation
 
-If **VibeMedic** saved you hours of debugging, caught a critical security vulnerability, or helped you ship your AI-built product with confidence, consider supporting the continued development and open-source maintenance of this project:
+For advanced workflows, architectural philosophies, and execution recipes:
 
-<div align="center">
-
-[![Support VibeMedic via Flutterwave](https://img.shields.io/badge/Support%20VibeMedic-Donate%20via%20Flutterwave%20💳-0070BA?style=for-the-badge&logoColor=white)](https://flutterwave.com/donate/b6p187tamegm)
-
-👉 **[Click here to Support VibeMedic via Flutterwave](https://flutterwave.com/donate/b6p187tamegm)**
-
-</div>
+- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) — Core principles and system design philosophy.
+- [`docs/EXECUTION_GUIDE.md`](./docs/EXECUTION_GUIDE.md) — Best practices and step-by-step execution tracks.
+- [`docs/WORKFLOWS.md`](./docs/WORKFLOWS.md) — Targeted prompt recipes for specific engineering tasks.
 
 ---
 
-## 👥 Authors & Company
+## 🛡️ AI Operating Rules
 
-**VibeMedic** is created and maintained by **[Amararu Kenneth](https://github.com/kenneth556)** under **Blakkaverse**.
+To ensure coding agents operate with maximum precision and discipline on your repository, VibeMedic maintains:
 
-- GitHub: [@kenneth556](https://github.com/kenneth556)
-- Organization: **Blakkaverse**
+- [`AI_RULES.md`](./AI_RULES.md) — Mandatory core principles and authoring standards.
+- [`AGENTS.md`](./AGENTS.md) — Operating guidelines and agent directives.
+- [`REPAIR_STATUS.md`](./REPAIR_STATUS.md) — Real-time health and stage completion checklist.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions to improve prompt clarity, expand edge-case coverage, and refine audit workflows are welcome! Please review [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`AI_RULES.md`](./AI_RULES.md) before submitting pull requests.
+Contributions from the developer community are warmly welcome! Whether you are refining an existing prompt, adding a new database engine, or expanding third-party API recipes:
+
+1. Read [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+2. Check existing issues or open a new one.
+3. Submit a pull request following the repository guidelines.
 
 ---
 
 ## 📄 License
 
-This project is open-source under the [MIT License](./LICENSE).
+VibeMedic is open-source software licensed under the [MIT License](./LICENSE).
+
+---
+
+<div align="center">
+  <b>Built for developers who demand production-grade quality from AI-assisted coding.</b>
+</div>

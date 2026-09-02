@@ -1,4 +1,4 @@
-# Prompt 26: Mobile-First Experience & Ergonomics Pass
+﻿# Prompt 29: Mobile-First Experience & Ergonomics Pass
 
 > **Stage 4 — Experience & Polish**  
 > **Target:** Touch ergonomics, mobile drawers, safe areas, one-handed usability, virtual keyboard  

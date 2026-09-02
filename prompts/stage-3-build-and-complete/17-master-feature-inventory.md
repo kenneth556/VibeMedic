@@ -1,4 +1,4 @@
-# Prompt 16: Master Feature Inventory
+﻿# Prompt 17: Master Feature Inventory
 
 > **Stage 3 — Build & Complete**  
 > **Target:** Discovery of all intended features across routes, components, database, APIs, UI copy  

@@ -1,4 +1,4 @@
-# Prompt 23: Visual Assets, Icons & Lottie Animation Strategy
+﻿# Prompt 26: Visual Assets, Icons & Lottie Animation Strategy
 
 > **Stage 4 — Experience & Polish**  
 > **Target:** Icon libraries (Lucide/Heroicons/Icons8), asset tree, Lottie animations, licensing  

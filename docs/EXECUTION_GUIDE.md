@@ -23,12 +23,18 @@ graph TD
     B -->|Feature Finishing| E[Track C: Feature Completion Engine]
     B -->|Supabase Database| F[Track D: Supabase Synchronization]
     B -->|Design & PWA| G[Track E: Experience Polish & PWA]
+    B -->|APIs & Payments| H[Track F: External Integrations & Payments]
+    B -->|Testing & Regression| I[Track G: Full Test Verification]
+    B -->|Production Launch| J[Track H: Pre-Launch Readiness]
 
     C --> C1[01 Codebase Audit] --> C2[02 Dummy Data] --> C3[03 UI Functionality]
     D --> D1[MASTER_REPAIR.md]
-    E --> E1[16 Feature Inventory] --> E2[17 Feature Verification] --> E3[18 Implementation Engine] --> E4[21 Zero-Defect Pass]
+    E --> E1[17 Feature Inventory] --> E2[18 Feature Verification] --> E3[19 Implementation Engine] --> E4[22 Zero-Defect Pass]
     F --> F1[Supabase 01 Source-of-Truth] --> F2[Supabase 02 SQL Verification] --> F3[Supabase 04 Re-Sync]
-    G --> G1[22 UI/UX Design] --> G2[25 PWA Conversion] --> G3[28 Final Polish]
+    G --> G1[25 UI/UX Design] --> G2[28 PWA Conversion] --> G3[31 Final Polish]
+    H --> H1[34 API Integrations] --> H2[35 API Security] --> H3[39 Payment Flow]
+    I --> I1[41 Test Coverage] --> I2[42 E2E Flows] --> I3[43 Regression Testing]
+    J --> J1[44 Architecture Consistency] --> J2[45 Production Readiness] --> J3[46 Final Doctor's Checkup]
 ```
 
 ---
@@ -53,11 +59,12 @@ graph TD
 ## Track C: Feature Discovery & Completion Engine
 *Best for: Applications where half the features were started but left incomplete.*
 
-1. **`prompts/stage-3-build-and-complete/16-master-feature-inventory.md`** — Discovers all intended features.
-2. **`prompts/stage-3-build-and-complete/17-deep-feature-verification.md`** — Traces full 17-point lifecycle for each feature.
-3. **`prompts/stage-3-build-and-complete/18-feature-implementation-engine.md`** — Implements unfinished features end-to-end.
-4. **`prompts/stage-3-build-and-complete/19-partial-feature-completion.md`** — Closes all partial feature gaps.
-5. **`prompts/stage-3-build-and-complete/21-zero-defect-feature-pass.md`** — Final verification pass.
+1. **`prompts/stage-3-build-and-complete/17-master-feature-inventory.md`** — Discovers all intended features.
+2. **`prompts/stage-3-build-and-complete/18-deep-feature-verification.md`** — Traces full 17-point lifecycle for each feature.
+3. **`prompts/stage-3-build-and-complete/19-feature-implementation-engine.md`** — Implements unfinished features end-to-end.
+4. **`prompts/stage-3-build-and-complete/20-partial-feature-completion.md`** — Closes all partial feature gaps.
+5. **`prompts/stage-3-build-and-complete/22-zero-defect-feature-pass.md`** — Final verification pass.
+6. **`prompts/stage-3-build-and-complete/23-dead-code-dependency-audit.md`** — Prunes unused code and unreferenced exports.
 
 ---
 
@@ -74,9 +81,37 @@ graph TD
 ## Track E: Design System, Mobile & PWA Polish
 *Best for: Transforming a clunky AI app into a slick, responsive, installable product.*
 
-1. **`prompts/stage-4-experience-and-polish/22-ui-ux-design-audit.md`** — Standardizes spacing, typography, and card primitives.
-2. **`prompts/stage-4-experience-and-polish/23-icons-and-visual-assets.md`** — Implements Lucide icons and clean asset paths.
-3. **`prompts/stage-4-experience-and-polish/24-animation-and-microinteractions.md`** — Adds micro-interactions and smooth transitions.
-4. **`prompts/stage-4-experience-and-polish/25-pwa-conversion.md`** — Creates web app manifest, service worker, and offline mode.
-5. **`prompts/stage-4-experience-and-polish/26-mobile-experience-pass.md`** — Ergonomic mobile layout and touch target audit.
-6. **`prompts/stage-4-experience-and-polish/28-final-production-polish.md`** — Eliminates all remaining visual rough edges.
+1. **`prompts/stage-4-experience-and-polish/25-ui-ux-design-audit.md`** — Standardizes spacing, typography, and card primitives.
+2. **`prompts/stage-4-experience-and-polish/26-icons-and-visual-assets.md`** — Implements Lucide icons and clean asset paths.
+3. **`prompts/stage-4-experience-and-polish/27-animation-and-microinteractions.md`** — Adds micro-interactions and smooth transitions.
+4. **`prompts/stage-4-experience-and-polish/28-pwa-conversion.md`** — Creates web app manifest, service worker, and offline mode.
+5. **`prompts/stage-4-experience-and-polish/29-mobile-experience-pass.md`** — Ergonomic mobile layout and touch target audit.
+6. **`prompts/stage-4-experience-and-polish/31-final-production-polish.md`** — Eliminates all remaining visual rough edges.
+
+---
+
+## Track F: Third-Party APIs, Webhooks & Payments
+*Best for: Hardening provider integrations, webhook signatures, and financial transactions.*
+
+1. **`prompts/stage-6-api-integrations/34-api-integration-audit.md`** — Replaces mock APIs with verified integrations.
+2. **`prompts/stage-6-api-integrations/35-api-security-audit.md`** — Eliminates client-side secret leaks.
+3. **`prompts/stage-6-api-integrations/37-webhook-audit.md`** — Verifies webhook signature validation & idempotency.
+4. **`prompts/stage-7-payments/39-payment-flow-audit.md`** — Verifies payment initiation, callbacks, and database grants.
+
+---
+
+## Track G: Testing & Regression Suite
+*Best for: Establishing solid test coverage and verifying zero post-repair regressions.*
+
+1. **`prompts/stage-9-testing/41-test-coverage-critical-path-audit.md`** — Authors tests for critical user journeys.
+2. **`prompts/stage-9-testing/42-end-to-end-user-flow-verification.md`** — Tests edge journeys and failure states.
+3. **`prompts/stage-9-testing/43-regression-testing-after-repairs.md`** — Runs full regression pass.
+
+---
+
+## Track H: Pre-Launch Readiness & Final Doctor's Checkup
+*Best for: Final verification before launching or presenting to stakeholders.*
+
+1. **`prompts/stage-10-architecture/44-architecture-consistency-audit.md`** — Standardizes data fetching and error patterns.
+2. **`prompts/stage-11-production/45-production-readiness-audit.md`** — Launch readiness scorecard across all operational pillars.
+3. **`prompts/stage-11-production/46-final-doctors-checkup.md`** — Final non-destructive ship/don't ship verdict.

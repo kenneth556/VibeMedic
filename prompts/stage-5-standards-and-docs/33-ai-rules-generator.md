@@ -1,4 +1,4 @@
-# Prompt 30: AI Rules & Operating Instructions Generator
+﻿# Prompt 33: AI Rules & Operating Instructions Generator
 
 > **Stage 5 — Standards & Docs**  
 > **Target:** System guidelines, safety constraints, verification pipeline, reporting contract for AI agents  

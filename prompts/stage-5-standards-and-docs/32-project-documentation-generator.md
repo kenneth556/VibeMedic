@@ -1,4 +1,4 @@
-# Prompt 29: Project Documentation Generator
+﻿# Prompt 32: Project Documentation Generator
 
 > **Stage 5 — Standards & Docs**  
 > **Target:** README, CONTRIBUTING, ARCHITECTURE, DEVELOPMENT, FEATURES, TROUBLESHOOTING, .env.example  
